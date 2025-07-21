@@ -1,75 +1,86 @@
 <script>
-// @ts-nocheck
-
     import * as Highcharts from "highcharts";
     import "highcharts/modules/exporting";
     import { Chart } from "@highcharts/svelte";
     import Scroller from "../lib/Scroller.svelte";
     import ArticleText from "../lib/ArticleText.svelte";
-
+    
 
     let options = {
         chart: {
-            type: "pie",
+            type: "column",
+            backgroundColor: '#f6d9bd'
         },
         title: {
-            text: "An Example Pie Chart",
+            text: "National College Enrollment Rates 2021-2023",
+           style: {
+        color: '#3F292B',
+        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+        fontSize: '20px'
+  }
         },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                dataLabels: [
-                    {
-                        enabled: true,
-                        distance: 20,
-                    },
-                    {
-                        enabled: true,
-                        distance: -40,
-                        format: "{point.percentage:.1f}%",
-                        style: {
-                            fontSize: "1.2em",
-                            textOutline: "none",
-                        },
-                        filter: {
-                            operator: ">",
-                            property: "percentage",
-                            value: 10,
-                        },
-                    },
-                ],
+        subtitle: { 
+            text: "National college enrollment rates across races for the years 2021, 2022, and 2023",
+            style: {
+        color: '#3F292B',
+        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+        fontSize: '14px'
+        
+    }
+
+        },
+        xAxis: {
+            categories: ["White","Asian","Hispanic","Black"],
+            style: {
+        color: '#3F292B',
+        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif'}
+
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: "Percentage of population enrolled (%)",
+                style: {
+        color: '#3F292B',
+        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+        fontSize: '12px' }
+            }
             },
+        tooltip: {
+        valueSuffix: "(%)"
+    },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
         },
         series: [
             {
-                name: "Group",
-                data: [
-                    {
-                        name: "Group 1",
-                        y: 151,
-                    },
-                    {
-                        name: "Group 2",
-                        sliced: true,
-                        selected: true,
-                        y: 180,
-                    },
-                    {
-                        name: "Group 3",
-                        y: 32,
-                    },
-                    {
-                        name: "Group 4",
-                        y: 103,
-                    },
-                    {
-                        name: "Group 5",
-                        y: 77,
-                    },
-                ],
+             name: "2021", 
+             data: [5.1, 7.3, 6.2, 6.4],
+             style: {
+            color: '#3F292B',
+            fontFamily: 'Verdana, Geneva, Tahoma, sans-serif'}
             },
-        ],
-    };
+            {
+                name:"2022",
+                data: [5,7.2,6.2,6.4],
+                style: {
+             color: '#3F292B',
+            fontFamily: 'Verdana, Geneva, Tahoma, sans-serif'}
+            },
+             {
+                name:"2023",
+                data: [4.8,6.9,5.9,6.1],
+                style: {
+            color: '#3F292B',
+            fontFamily: 'Verdana, Geneva, Tahoma, sans-serif'}
+            }
+        ]
+    }
+        
+        
 </script>
 
 <div>
@@ -79,61 +90,28 @@
                 <Chart {options} highcharts={Highcharts} />
             </div>
             <p>
-                Here's an example chart using
-                <a href="https://www.highcharts.com/">Highcharts</a>!
+                 The following is a bar graph constructed with BWDC website data that displays the <strong> enrollment rates at post-secondary education institutions </strong> for students in 2021, 2022, and 2023, belonging to different race groups. 
             </p>
-            <p>
-                📈 <strong>Highcharts</strong> is a super-flexible library for
-                creating all kinds of charts. See demos of different chart types
-                <a href="https://www.highcharts.com/demo">here</a>.
-            </p>
-            <p>
-                Since we're using Highcharts through Svelte, the syntax is a
-                little different from what you might see in the demos. But all
-                of Highcharts' functionality is available through the Highcharts
-                for Svelte package.
-            </p>
-            <p>
-                The configuration is done through the
-                <code>options</code> json object passed to the chart, which you'll
-                see in the source code for this template.
-            </p>
-            <p>
-                Use the
-                <a href="https://api.highcharts.com/highcharts/"
-                    >API reference</a
-                >
-                to understand what each element in the <code>options</code> object
-                does.
-            </p>
+            <p> The data suggests that for the last few years the percentage of enrolled students per race group has been higher for minority groups.</p>
         {/snippet}
 
         {#snippet scrolly()}
             <ArticleText>
-                <strong>Welcome to the KWK Data Scrollytelling Template!</strong
+                <strong>Both black and hispanic populations have been enrolling at post-secondary institutions at higher rates than their white counterparts.</strong
                 >
             </ArticleText>
 
             <ArticleText>
-                This is a <strong>basic example</strong> of how you might create
-                a scrollytelling piece using Svelte and Highcharts.
+                On this data alone, we can observe a <strong> strong interest </strong> in higher education among minority groups, which is a positive move towards social mobility and more opportunities.
             </ArticleText>
 
             <ArticleText>
-                You can use this template as a <strong>starting point</strong>
-                for your project.
-                <br /><br />
-                Or, if you want to build something from scratch, you can use it as
-                a <strong>reference</strong> for specific functionality.
+                However, enrollment rates alone don't tell the <strong> whole </strong> story.
             </ArticleText>
 
             <ArticleText>
-                This is <strong>just one way</strong> that scrollytelling can
-                look.
-                <br /><br />
                 <strong>
-                    If you use this template, be sure to modify it and make it
-                    your own!
+                   Despite strong enrollment rates, data also suggests that black and hispanic populations finish college at much lower rates than other students.
                 </strong>
             </ArticleText>
         {/snippet}
@@ -142,8 +120,12 @@
 
 <style>
     .chart {
-        width: 90%;
+        width: 100%;
         margin: 0px auto;
     }
+    p {
+       font-family:Verdana, Geneva, Tahoma, sans-serif;
+       color:#3F292B; 
+    }
+    
 </style>
-

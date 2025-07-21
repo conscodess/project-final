@@ -7,32 +7,42 @@
 
     const series = [
         {
-            name: "Group 1",
+            name: "White",
             data: [
-                [1990, 3],
-                [2000, 4],
-                [2010, 1],
-                [2020, 1],
+                [2019, 67.7] ,
+                [2020, 68],
+                [2021, 68.1],
+                [2022, 68.6],
             ],
             color: "#8427c9",
         },
         {
-            name: "Group 2",
+            name: "Asian",
             data: [
-                [1990, 2],
-                [2000, 5],
-                [2010, -2],
-                [2020, 2],
+                [2019, 71.9],
+                [2020, 73.6],
+                [2021, 74],
+                [2021, 75.2],
             ],
             color: "#ff99fc",
         },
-        {
-            name: "Group 3",
+            {
+            name: "Hispanic",
             data: [
-                [1990, 4],
-                [2000, 3],
-                [2010, 0],
-                [2020, 3],
+                [2019, 49.1],
+                [2020, 49.5],
+                [2021, 49.5],
+                [2022, 50.4],
+            ],
+            color: "#ff99fc",
+            },
+        {
+            name: "Black",
+            data: [
+                [2019, 42.5],
+                [2020, 43],
+                [2021, 42.8],
+                [2022, 43.8],
             ],
             color: "#4096fa",
         },
@@ -59,7 +69,7 @@
     };
 
     function toggleThirdSeries() {
-        const existingSeries = chart.series.find((s) => s.name === "Group 3");
+        const existingSeries = chart.series.find((s) => s.name === "Black");
 
         if (existingSeries) {
             existingSeries.remove();
@@ -78,7 +88,7 @@
                 <Chart bind:chart {options} highcharts={Highcharts} />
             </div>
             <button on:click={toggleThirdSeries} class="toggle-button">
-                {thirdSeriesVisible ? "Remove Group 3" : "Add Group 3"}
+                {thirdSeriesVisible ? "Remove Black Stats" : "Add Black Stats"}
             </button>
             <div>
                 <p>
