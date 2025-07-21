@@ -2,10 +2,9 @@
     import TitleCard from "../lib/TitleCard.svelte";
 
     const title =
-        "The following examples show the use of the Intersection Observer API";
+        "1 in 5 Black college students have faced discriminatory behavior at their institutions.";
     const subtitle =
-        "Be sure to read through the text on this page and also " +
-        "poke around in the code to fully understand how they work!";
+        "Black students who report frequent discriminatory practices are more likely (61%) to consider stopping their coursework to those with fewer or no experiences (38%)." 
 </script>
 
 <TitleCard {title} {subtitle} />

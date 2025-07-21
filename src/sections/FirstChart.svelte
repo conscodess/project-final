@@ -15,7 +15,7 @@
             text: "National College Enrollment Rates 2021-2023",
            style: {
         color: '#3F292B',
-        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+        fontFamily: 'Copperplate, Copperplate Gothic Light, Cinzel, serif',
         fontSize: '20px'
   }
         },
@@ -39,7 +39,7 @@
         yAxis: {
             min: 0,
             title: {
-                text: "Percentage of population enrolled (%)",
+                text: "Percentage of graduates enrolled (%)",
                 style: {
         color: '#3F292B',
         fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
@@ -102,7 +102,7 @@
             </ArticleText>
 
             <ArticleText>
-                On this data alone, we can observe a <strong> strong interest </strong> in higher education among minority groups, which is a positive move towards social mobility and more opportunities.
+                On this data alone, we can observe an <strong> strong interest </strong> in higher education among minority groups, which is a positive move towards social mobility and more opportunities.
             </ArticleText>
 
             <ArticleText>
@@ -111,7 +111,7 @@
 
             <ArticleText>
                 <strong>
-                   Despite strong enrollment rates, data also suggests that black and hispanic populations finish college at much lower rates than other students.
+                   Despite strong enrollment rates, data also suggests that students belonging to certain minority groups might struggle with being succesful once admitted.
                 </strong>
             </ArticleText>
         {/snippet}

@@ -4,7 +4,7 @@
 </script>
 
 <div>
-    <Scroller layout="right">
+    <Scroller layout="left">
         {#snippet sticky()}
             <img class="duck-img" src="teacher.png" alt="Teacher and student relationship" />
         {/snippet}
